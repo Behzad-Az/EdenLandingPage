@@ -19,8 +19,10 @@ const Header: FC<Props> = () : JSX.Element => {
     }
   };
 
+  const skillIcons = [images.flutter, images.redux, images.sass];
+
   return (
-    <div className='app__header app__flex'>
+    <div id='home' className='app__header app__flex'>
 
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
@@ -51,13 +53,11 @@ const Header: FC<Props> = () : JSX.Element => {
         className='app__header-img'
       >
         <img src={images.profile} alt='profile_bg' />
-        <motion.svg
+        <motion.img
           whileInView={{ scale: [0, 1] }}
           transition={{ duration: 1, ease: 'easeInOut' }}
-          xmlns={images.circle}
-          width={300}
-          height={300}
-          // alt='profile_circle'
+          src={images.circle}
+          alt='profile_circle'
           className='overlay_circle'
         />
       </motion.div>
@@ -67,6 +67,13 @@ const Header: FC<Props> = () : JSX.Element => {
         whileInView={scaleVariants.whileInView}
         className='app__header-circles'
       >
+        {
+          skillIcons.map((icon, index) => (
+            <div className='circle-cmp app__flex' key={`circle-${index}`}>
+              <img src={icon} alt='skill-icon' />
+            </div>
+          ))
+        }
         
       </motion.div>
 

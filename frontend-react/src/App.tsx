@@ -8,7 +8,7 @@ interface Props {};
 const App: FC<Props> = () : JSX.Element => {
   return (
     <div className='app'>
-      {/* <Navbar /> */}
+      <Navbar />
       <Header />
       <About />
       <Work />
