@@ -5,9 +5,8 @@ import React, {
 } from 'react';
 import { motion } from 'framer-motion';
 
-import { images } from '../../constants';
+import { AppWrap } from '../../wrapper';
 import './About.scss';
-
 import { urlFor, client } from '../../client';
 
 interface Props {};
@@ -30,9 +29,8 @@ const About: FC<Props> = () : JSX.Element => {
     fetchFromSanity();
   }, [])
   
-  console.log("i'm here 9: ", abouts);
   return (
-    <>
+    <div>
       <h2 className='head-text'>
         I Know That <span>Good Design</span><br />means <span>Good Business</span>
       </h2>
@@ -53,8 +51,8 @@ const About: FC<Props> = () : JSX.Element => {
           ))
         }
       </div>
-    </>
+    </div>
   );
 };
 
-export default About;
+export default AppWrap(About, 'about', '');

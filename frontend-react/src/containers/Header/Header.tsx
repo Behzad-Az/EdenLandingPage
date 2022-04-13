@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { motion } from 'framer-motion';
 
+import { AppWrap } from '../../wrapper';
 import { images } from '../../constants';
 import './Header.scss';
 
@@ -22,7 +23,7 @@ const Header: FC<Props> = () : JSX.Element => {
   const skillIcons = [images.flutter, images.redux, images.sass];
 
   return (
-    <div id='home' className='app__header app__flex'>
+    <div className='app__header app__flex'>
 
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
@@ -81,4 +82,4 @@ const Header: FC<Props> = () : JSX.Element => {
   );
 };
 
-export default Header;
+export default AppWrap(Header, 'home', '');
