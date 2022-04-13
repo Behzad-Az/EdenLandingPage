@@ -30,14 +30,6 @@ const About: FC<Props> = () : JSX.Element => {
     fetchFromSanity();
   }, [])
   
-
-  // const abouts: About[] = [
-  //   { title: 'Web Development', description: 'I am a good developer', imgUrl: images.about01 },
-  //   { title: 'Web Design', description: 'I am a good designer', imgUrl: images.about02 },
-  //   { title: 'UX/UI', description: 'I am a good web developer', imgUrl: images.about03 },
-  //   { title: 'Web Animations', description: 'I am a good developer', imgUrl: images.about04 }
-  // ];
-
   console.log("i'm here 9: ", abouts);
   return (
     <>
@@ -54,7 +46,7 @@ const About: FC<Props> = () : JSX.Element => {
               transition={{ duration: 0.5, type: 'tween' }}
               className='app__profile-item'
             >
-              {/* <img src={urlFor(about.imgUrl)} alt={about.title} /> */}
+              <img src={urlFor(about.imgUrl).toString()} alt={about.title} />
               <h2 className='bold-text' style={{ marginTop: 20}}>{about.title}</h2>
               <h2 className='p-text' style={{ marginTop: 10}}>{about.description}</h2>
             </motion.div>
