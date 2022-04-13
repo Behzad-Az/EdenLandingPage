@@ -8,29 +8,30 @@ import { motion } from 'framer-motion';
 import { AppWrap } from '../../wrapper';
 import './About.scss';
 import { urlFor, client } from '../../client';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 interface Props {};
 interface About {
   title: string;
   description: string;
-  imgUrl: string;
+  imgUrl: SanityImageSource;
 };
 
 const About: FC<Props> = () : JSX.Element => {
   const [abouts, setAbouts] = useState<About[]>([]);
 
-  const fetchFromSanity = async() => {
-    const query = '*[_type == "abouts"]';
-    const data: About[] = await client.fetch(query);
-    setAbouts(data);
-  };
-
   useEffect(() => {
-    fetchFromSanity();
-  }, [])
+    const query = '*[_type == "abouts"]';
+    client.fetch(query)
+    .then(data => setAbouts(data))
+    .catch(error => {
+      console.error(error);
+      setAbouts([]);
+    });
+  }, []);
   
   return (
-    <div>
+    <>
       <h2 className='head-text'>
         I Know That <span>Good Design</span><br />means <span>Good Business</span>
       </h2>
@@ -51,7 +52,7 @@ const About: FC<Props> = () : JSX.Element => {
           ))
         }
       </div>
-    </div>
+    </>
   );
 };
 
