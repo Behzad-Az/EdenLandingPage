@@ -21,7 +21,7 @@ interface Work {
 const Work: FC<Props> = () : JSX.Element => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [animateCard, setAnimateCard] = useState<{ y: number; opacity: number }>({ y: 0, opacity: 1 });
-  const [works, setWorks] = useState([]);
+  const [works, setWorks] = useState<Work[]>([]);
   const [filterWork, setFilterWork] = useState<Work[]>([]);
 
   useEffect(() => {
@@ -41,7 +41,17 @@ const Work: FC<Props> = () : JSX.Element => {
   const categories: string[] = ['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'];
   
   const handleWorkFilter = (item: string) => {
-
+    setActiveFilter(item);
+    setAnimateCard({ y: 100, opacity: 0 })
+    setTimeout(() => {
+      setAnimateCard({ y: 0, opacity: 1 });
+      if (item === 'All') {
+        setFilterWork(works);
+      }
+      else {
+        setFilterWork(works.filter(work => work.tags.includes(item)));
+      }
+    }, 500);
   };
   
   return (
@@ -72,7 +82,7 @@ const Work: FC<Props> = () : JSX.Element => {
           filterWork.map((work, index) => (
             <div key={index} className='app__work-item app__flex'>
               
-              <div className='app_work-img app__flex'>
+              <div className='app__work-img app__flex'>
                 <img src={urlFor(work.imgUrl).toString()} alt={work.name} />
                 <motion.div
                   whileHover={{ opacity: [0, 1] }}
