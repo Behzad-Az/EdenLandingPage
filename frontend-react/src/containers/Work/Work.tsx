@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Work.scss';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
@@ -130,4 +130,8 @@ const Work: FC<Props> = () : JSX.Element => {
   );
 };
 
-export default AppWrap(Work, 'work', '');
+export default AppWrap(
+  MotionWrap(Work, 'app__works'),
+  'work', 
+  'app__primarybg'
+);

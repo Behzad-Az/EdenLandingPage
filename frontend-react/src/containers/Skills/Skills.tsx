@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ReactTooltip from 'react-tooltip';
 
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import './Skills.scss';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
@@ -105,4 +105,9 @@ const Skills: FC<Props> = () : JSX.Element => {
   );
 };
 
-export default AppWrap(Skills, 'skills', '');
+// export default AppWrap(Skills, 'skills', '');
+export default AppWrap(
+  MotionWrap(Skills, 'app__skills'),
+  'skills', 
+  'app__whitebg'
+);
