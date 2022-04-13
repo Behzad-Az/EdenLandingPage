@@ -9,12 +9,11 @@ import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 interface Props {};
 interface Experince {
-  year: string;
-  works: {
-    name: string;
-    company: string;
-    desc: string;
-  }[];
+  startMonthYear: string;
+  endMonthYear: string;
+  name: string;
+  company: string;
+  description: string;
 };
 interface Skill {
   name: string;
@@ -26,14 +25,13 @@ const Skills: FC<Props> = () : JSX.Element => {
   const [experiences, setExperiences] = useState<Experince[]>([]);
   const [skills, setSkills] = useState<Skill[]>([]);
   useEffect(() => {
-    const experiencesQuery = '*[_type == "experiences"]';
+    const experiencesQuery = '*[_type == "workExperiences"]';
     const skillsQuery = '*[_type == "skills"]';
     Promise.all([
       client.fetch(experiencesQuery),
       client.fetch(skillsQuery)
     ])
     .then(data => {
-      console.log("i'm here 0: ",data[0]);
       setExperiences(data[0]);
       setSkills(data[1]);
     })
@@ -65,29 +63,40 @@ const Skills: FC<Props> = () : JSX.Element => {
             ))
           }
         </motion.div>
-        <motion.div className='app__experiences-list'>
+
+
+        <motion.div className='app__skills-exp'>
           {
             experiences.map((experience, index) => (
-              <div key={index}>
-                <motion.div
+
+              <motion.div
+                key={index}
+                className='app__skills-exp-item'
+              >
+                <div className='app__skills-exp-year'>
+                  <p className='bold-text'>{experience.startMonthYear} to<br />{experience.endMonthYear}</p>
+                </div>
+
+                <motion.div 
                   whileInView={{ opacity: [0, 1] }}
                   transition={{ duration: 0.5 }}
-                  className='app__experiences-item'
+                  className='app__skills-exp-work'
                   data-tip
-                  data-for={experience.works[0].name}
+                  data-for={experience.name}
                 >
-                  <h4 className='bold-text'>{experience.works[0].name}</h4>
-                  <p className='p-text'>{experience.works[0].company}</p>
-                </motion.div>
-                <ReactTooltip
-                  id={experience.works[0].name}
-                  effect='solid'
-                  arrowColor='#fff'
-                  className='experiences-tooltip'
-                >
-                  {experience.works[0].desc}
-                </ReactTooltip>
-              </div>
+                    <h4 className='bold-text'>{experience.name}</h4>
+                    <p className='p-text'>{experience.company}</p>
+                  </motion.div>
+                  <ReactTooltip
+                    id={experience.name}
+                    effect='solid'
+                    arrowColor='#fff'
+                    className='skills-tooltip'
+                  >
+                    {experience.description}
+                  </ReactTooltip>
+
+              </motion.div>
             ))
           }
         </motion.div>
@@ -96,4 +105,4 @@ const Skills: FC<Props> = () : JSX.Element => {
   );
 };
 
-export default Skills;
+export default AppWrap(Skills, 'skills', '');

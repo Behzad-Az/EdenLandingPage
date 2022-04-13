@@ -7,9 +7,8 @@ import works from './works'
 import testimonials from './testimonials'
 import brands from './brands'
 import abouts from './abouts'
-import experiences from './experiences'
 import skills from './skills'
-import workExperience from './workExperience'
+import workExperiences from './workExperiences'
 import contact from './contact'
 
 
@@ -19,7 +18,7 @@ export default createSchema({
   name: 'default',
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([works, testimonials, brands, abouts, skills, workExperience, experiences, contact
+  types: schemaTypes.concat([works, testimonials, brands, abouts, skills, workExperiences, contact
     /* Your types here! */
   ]),
 })
