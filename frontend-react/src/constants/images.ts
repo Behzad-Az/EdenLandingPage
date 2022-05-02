@@ -36,6 +36,13 @@ import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 
+import edenLogoFullColourReverse from '../assets/logos/EDEN-Logomark-Full-Colour-Reverse.png';
+import edenLogoFullColour from '../assets/logos/EDEN-Logomark-Full-Colour.png';
+import edenLogoOneColour from '../assets/logos/EDEN-Logomark-One-Colour.png';
+import edenLogoWhite from '../assets/logos/EDEN-Logomark-White.png';
+
+import edenBanner from '../assets/banners/EDEN-Social_Facebook_Cover_820x360.jpg';
+
 export default {
   email,
   mobile,
@@ -70,4 +77,11 @@ export default {
   nb,
   skype,
   spotify,
+
+  edenLogoFullColourReverse,
+  edenLogoFullColour,
+  edenLogoOneColour,
+  edenLogoWhite,
+
+  edenBanner
 };

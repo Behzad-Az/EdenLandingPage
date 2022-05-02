@@ -1,9 +1,9 @@
 #home {
   position: relative;
-  background: url('../../assets/bgIMG.png');
-  background-size: cover;
+  // background: url('../../assets/banners/EDEN-Social_Facebook_Cover_820x360.jpg');
+  // background-size: cover;
   background-repeat: repeat;
-  background-position: center;
+  // background-position: center;
 
   .app__wrapper {
     padding: 0;
@@ -19,14 +19,40 @@
   height: 100%;
   flex-direction: row;
   padding: 6rem 2rem 0;
-  @media screen and (min-width: 2000px) {
-    padding-top: 8rem;
-  }
+  // background-color: var(--theme-color-c);
+  // @media screen and (min-width: 2000px) {
+  //   padding-top: 8rem;
+  // }
   @media screen and (max-width: 1200px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
-  @media screen and (max-width: 450px) {
-    padding: 6rem 1rem 2rem;
+  // @media screen and (max-width: 450px) {
+  //   padding: 6rem 1rem 2rem;
+  // }
+}
+
+.app__header-left {
+  display: flex;
+  flex: 1;
+  background-color: green;
+  height: 100%;
+  width: 100%;
+}
+
+.app__header-right {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: blue;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 30%;
+    object-fit: cover;
   }
 }
 

@@ -10,6 +10,11 @@
   --gray-color: #6b7688;
   --brown-color: #46364a;
   --white-color: #ffffff;
+
+
+  --theme-color-a: #3629EE;
+  --theme-color-b: #9DD8D6;
+  --theme-color-c: #FFF2C6;
 }
 
 * {

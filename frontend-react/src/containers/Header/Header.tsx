@@ -28,6 +28,29 @@ const Header: FC<Props> = () : JSX.Element => {
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
+        className='app__header-left'
+      >
+
+      </motion.div>
+      
+      <motion.div 
+        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
+        className='app__header-right'
+      >
+        <img src={images.edenLogoFullColourReverse} alt='profile_bg' />
+        <h1 className='head-text'>Welcome to Eden</h1>
+        <p className='p-text'>Ethical Rentals</p>
+        <p className='p-text'>Extending livable life</p>
+        <p className='p-text'>Invest in your community</p>
+        <p className='p-text'>Invest in your community</p>        
+      </motion.div>
+
+
+      
+      {/* <motion.div
+        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
         className='app__header-info'
       >
         <div className='app__header-badge'>
@@ -36,7 +59,7 @@ const Header: FC<Props> = () : JSX.Element => {
             <span>👋🏼</span>
             <div style={{ marginLeft: 20 }}>
               <p className='p-text'>Hello, I am</p>
-              <h1 className='head-text'>Behzad</h1>
+              <h1 className='head-text'>Welcome to Eden</h1>
             </div>
           </div>
 
@@ -53,7 +76,7 @@ const Header: FC<Props> = () : JSX.Element => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className='app__header-img'
       >
-        <img src={images.profile} alt='profile_bg' />
+        <img src={images.edenLogoFullColourReverse} alt='profile_bg' />
         <motion.img
           whileInView={{ scale: [0, 1] }}
           transition={{ duration: 1, ease: 'easeInOut' }}
@@ -76,7 +99,7 @@ const Header: FC<Props> = () : JSX.Element => {
           ))
         }
         
-      </motion.div>
+      </motion.div> */}
 
     </div>
   );
