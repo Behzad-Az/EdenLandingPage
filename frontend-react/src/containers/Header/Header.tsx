@@ -23,28 +23,24 @@ const Header: FC<Props> = () : JSX.Element => {
   const skillIcons = [images.flutter, images.redux, images.sass];
 
   return (
-    <div className='app__header app__flex'>
-
-      <motion.div
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
-        className='app__header-left'
-      >
-
-      </motion.div>
+    <motion.div
+      whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+      transition={{ duration: 0.5 }}
+      className='app__header app__flex'
+    >
+      <div className='app__header-left' />
       
-      <motion.div 
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
-        className='app__header-right'
-      >
-        <img src={images.edenLogoFullColourReverse} alt='profile_bg' />
-        <h1 className='head-text'>Welcome to Eden</h1>
-        <p className='p-text'>Ethical Rentals</p>
-        <p className='p-text'>Extending livable life</p>
-        <p className='p-text'>Invest in your community</p>
-        <p className='p-text'>Invest in your community</p>        
-      </motion.div>
+      <div className='app__header-right'>
+        <div className='app__header-logo-container'>
+          <img src={images.edenLogoOneColour} alt='profile_bg' />
+        </div>
+        <div className='app__header-text-container'>
+          <h1 className='head-text'>Welcome to Eden</h1>
+          <p className='p-text'>Ethical Rentals</p>
+          <p className='p-text'>Extending livable life</p>
+          <p className='p-text'>Invest in your community</p>          
+        </div>
+      </div>
 
 
       
@@ -101,7 +97,7 @@ const Header: FC<Props> = () : JSX.Element => {
         
       </motion.div> */}
 
-    </div>
+    </motion.div>
   );
 };
 

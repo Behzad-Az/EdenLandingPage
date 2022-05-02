@@ -34,25 +34,40 @@
 .app__header-left {
   display: flex;
   flex: 1;
-  background-color: green;
   height: 100%;
   width: 100%;
+  position: relative;
+  background: url('../../assets/banners/EDEN-Social_Facebook_Cover_820x360.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
 }
 
 .app__header-right {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color: blue;
-  overflow: hidden;
+  background-color: white;
   height: 100%;
   width: 100%;
-
   justify-content: center;
-  align-items: center;
-  img {
-    width: 30%;
-    object-fit: cover;
+  background-color: var(--theme-color-c);
+
+  .app__header-logo-container {
+    display: flex;
+    justify-content: center;
+    img {
+      max-width: 50%;
+      @media screen and (max-width: 1200px) {
+        max-width: 20%;
+      }
+    }
+    
+  }
+  .app__header-text-container {
+    h1, p {
+      text-align: center;
+    }
   }
 }
 
