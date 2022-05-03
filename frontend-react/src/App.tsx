@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { About, Footer, Header, Skills, Testimonials, Work, Story } from './containers';
+import { About, Footer, Header, Skills, Testimonials, Work, Story, HowItWorks } from './containers';
 import { Navbar } from './components';
 import './App.scss';
 
@@ -11,6 +11,7 @@ const App: FC<Props> = () : JSX.Element => {
       <Navbar />
       <Header />
       <Story />
+      <HowItWorks />
       <About />
       <Work />
       <Skills />
