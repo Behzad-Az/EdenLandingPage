@@ -22,9 +22,9 @@ const Header: FC<Props> = () : JSX.Element => {
         </div>
         <div className='app__header-text-container'>
           <h1 className='head-text app__whitetext'>Welcome to Eden</h1>
-          <p className='p-text app__whitetext'>Ethical Rentals</p>
-          <p className='p-text app__whitetext'>Extending livable life</p>
-          <p className='p-text app__whitetext'>Invest in your community</p>          
+          <p className='p-text app__whitetext'>ethical real estate investing for all</p>
+          <p className='p-text app__whitetext'>equal barriers</p>
+          <p className='p-text app__whitetext'>no hassle</p>          
         </div>
       </div>
     </motion.div>

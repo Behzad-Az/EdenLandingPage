@@ -95,11 +95,14 @@
 }
 
 .content-container {
-  padding: 2rem;
+  padding: 2rem 4rem;
+  @media screen and (max-width: 1000px) {
+    padding: 2rem 1.5rem;
+  }
 }
 
 .p-text {
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-align: left;
   line-height: 1.5;
 
