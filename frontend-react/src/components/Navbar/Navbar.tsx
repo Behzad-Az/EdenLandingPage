@@ -9,7 +9,7 @@ interface Props {};
 
 const Navbar: FC<Props> = () : JSX.Element => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
-  const items: string[] = ['home', 'about', 'work', 'skills', 'contact'];
+  const items: string[] = ['home', 'story', 'about', 'work', 'skills', 'contact'];
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>

@@ -8,95 +8,25 @@ import './Header.scss';
 interface Props {};
 
 const Header: FC<Props> = () : JSX.Element => {
-
-  const scaleVariants = {
-    whileInView: {
-      scale: [0, 1],
-      opacity: [0, 1],
-      transition: {
-        duration: 1,
-        ease: 'easeInOut'
-      }
-    }
-  };
-
-  const skillIcons = [images.flutter, images.redux, images.sass];
-
   return (
     <motion.div
       whileInView={{ x: [-100, 0], opacity: [0, 1] }}
       transition={{ duration: 0.5 }}
-      className='app__header app__flex'
+      className='app__header'
     >
-      <div className='app__header-left' />
-      
-      <div className='app__header-right'>
+      <div className='app__header-left app__bluebg' />
+
+      <div className='app__header-right app__bluebg'>
         <div className='app__header-logo-container'>
-          <img src={images.edenLogoOneColour} alt='profile_bg' />
+          <img src={images.edenLogoWhite} alt='logo' />
         </div>
         <div className='app__header-text-container'>
-          <h1 className='head-text'>Welcome to Eden</h1>
-          <p className='p-text'>Ethical Rentals</p>
-          <p className='p-text'>Extending livable life</p>
-          <p className='p-text'>Invest in your community</p>          
+          <h1 className='head-text app__whitetext'>Welcome to Eden</h1>
+          <p className='p-text app__whitetext'>Ethical Rentals</p>
+          <p className='p-text app__whitetext'>Extending livable life</p>
+          <p className='p-text app__whitetext'>Invest in your community</p>          
         </div>
       </div>
-
-
-      
-      {/* <motion.div
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
-        className='app__header-info'
-      >
-        <div className='app__header-badge'>
-
-          <div className='badge-cmp app__flex'>
-            <span>👋🏼</span>
-            <div style={{ marginLeft: 20 }}>
-              <p className='p-text'>Hello, I am</p>
-              <h1 className='head-text'>Welcome to Eden</h1>
-            </div>
-          </div>
-
-          <div className='tag-cmp app__flex'>
-            <p className='p-text'>Web Developer</p>
-            <p className='p-text'>Freelancer</p>
-          </div>
-
-        </div>
-      </motion.div>
-
-      <motion.div
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className='app__header-img'
-      >
-        <img src={images.edenLogoFullColourReverse} alt='profile_bg' />
-        <motion.img
-          whileInView={{ scale: [0, 1] }}
-          transition={{ duration: 1, ease: 'easeInOut' }}
-          src={images.circle}
-          alt='profile_circle'
-          className='overlay_circle'
-        />
-      </motion.div>
-
-      <motion.div
-        variants={scaleVariants}
-        whileInView={scaleVariants.whileInView}
-        className='app__header-circles'
-      >
-        {
-          skillIcons.map((icon, index) => (
-            <div className='circle-cmp app__flex' key={`circle-${index}`}>
-              <img src={icon} alt='skill-icon' />
-            </div>
-          ))
-        }
-        
-      </motion.div> */}
-
     </motion.div>
   );
 };

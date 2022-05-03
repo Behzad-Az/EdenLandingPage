@@ -5,7 +5,7 @@ interface Props {
 };
 
 const NavigationDots: FC<Props> = ({ active }) : JSX.Element => {
-  const items: string[] = ['home', 'about', 'work', 'skills', 'testimonials', 'contact'];
+  const items: string[] = ['home', 'story', 'about', 'work', 'skills', 'testimonials', 'contact'];
 
   return (
     <div className='app__navigation'>
@@ -14,8 +14,7 @@ const NavigationDots: FC<Props> = ({ active }) : JSX.Element => {
           <a 
             key={item + index}
             href={`#${item}`}
-            style={active === item ? { backgroundColor: '#313BAC' } : {}}
-            className='app__navigation-dot'
+            className={active === item ? 'app__navigation-dot active' : 'app__navigation-dot' }
           />
         ))
       }
