@@ -42,6 +42,7 @@ import edenLogoOneColour from '../assets/logos/EDEN-Logomark-One-Colour.png';
 import edenLogoWhite from '../assets/logos/EDEN-Logomark-White.png';
 
 import edenBanner from '../assets/banners/EDEN-Social_Facebook_Cover_820x360.jpg';
+import storyMap from '../assets/banners/story-map.png';
 
 export default {
   email,
@@ -83,5 +84,6 @@ export default {
   edenLogoOneColour,
   edenLogoWhite,
 
-  edenBanner
+  edenBanner,
+  storyMap
 };
